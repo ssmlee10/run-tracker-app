@@ -34,5 +34,19 @@ router.post('/', async (req, res) => {
     }
 })
 
+// get a new run's show page
+router.get('/:runId', async (req, res) => {
+    try {
+        const currentUser = await User.findById(req.session.user._id);
+        const run = currentUser.runs.id(req.params.runId);
+        res.render('runs/show.ejs', {
+            run: run,
+        });
+    } catch(error) {
+        console.log(error);
+        res.redirect('/');
+    }
+});
+
 
 module.exports = router;

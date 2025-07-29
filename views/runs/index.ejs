@@ -11,7 +11,7 @@
     <a href="runs/new">Add a New Run</a>
     <ul>
       <% runs.forEach((run) => { %>
-        <a href=""><li><%= run.location %></li>
+        <a href="/users/<%= user._id %>/runs/<%= run._id %>"><li><%= run.location %></li>
       <li><%= new Date(run.date).toLocaleDateString({ year: 'numeric', month:
         'short', day: 'numeric' }); %></li>
       <li><%= run.distance %><%= run.distanceUnit %>, <%= run.time %></li><br>
