@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Runs</title>
-</head>
-<body>
-<%- include('../partials/_navbar.ejs') %>
+  </head>
+  <body>
+    <%- include('../partials/_navbar.ejs') %>
     <h1>Welcome to my Runs collection</h1>
     <a href="runs/new">Add a New Run</a>
-</body>
+    <ul>
+      <% runs.forEach((run) => { %>
+        <a href=""><li><%= run.location %></li>
+      <li><%= new Date(run.date).toLocaleDateString({ year: 'numeric', month:
+        'short', day: 'numeric' }); %></li>
+      <li><%= run.distance %><%= run.distanceUnit %>, <%= run.time %></li><br>
+      <% }); %></a>
+    </ul>
+  </body>
 </html>
