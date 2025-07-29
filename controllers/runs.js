@@ -61,5 +61,19 @@ router.delete('/:runId', async (req, res) => {
     }
 })
 
+// edit a run
+router.get('/:runId/edit', async (req, res) => {
+    try {
+        const currentUser = await User.findById(req.session.user._id);
+        const run = currentUser.runs.id(req.params.runId);
+        res.render('runs/edit.ejs', {
+            run: run,
+        });
+    } catch(eroor) {
+        console.log(error);
+        res.redirect('/');
+    }
+})
+
 
 module.exports = router;

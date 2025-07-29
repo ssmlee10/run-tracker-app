@@ -20,6 +20,8 @@
         <p>Notes: <%= run.notes %></p>
     <% } %>
 
+    <a href="/users/<%=user._id%>/runs/<%=run._id%>/edit">Edit this Run</a>
+
     <form action="/users/<%=user._id%>/runs/<%=run._id%>?_method=DELETE" method="POST">
         <button type="submit">Delete this run</button>
     </form>

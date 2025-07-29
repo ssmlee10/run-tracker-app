@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit <%= new Date(run.date).toLocaleDateString({ year: 'numeric', month:'short', day: 'numeric' }); %> Run</title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>Edit the run here</h1>
+     <form action="/users/<%= user._id %>/runs/<%= run._id %>?_method=PUT" method="POST">
+      <!-- Date -->
+      <label for="date">Date</label>
+      <input type="date" id="date" name="date" value="<%= run.date ? run.date.toISOString().split('T')[0] : '' %>"/>
+
+      <!-- Distance -->
+      <label for="distance">Distance</label>
+      <input type="text" name="distance" id="distance" value="<%= run.distance %>"/>
+
+      <!-- Distance Unit -->
+      <label for="distanceUnit"></label>
+      <select id="distanceUnit" name="distanceUnit">
+        <option value="mi" <%= run.distanceUnit === 'mi' ? 'selected' : '' %>>mi</option>
+        <option value="km" <%= run.distanceUnit === 'km' ? 'selected' : '' %>>km</option>
+      </select>
+
+      <!-- Time -->
+      <label for="time">Time</label>
+      <input type="text" id="time" name="time" value="<%= run.time %>"/>
+
+      <!-- Calories Burnt -->
+      <label for="caloriesBurnt">Calories Burned</label>
+      <input type="number" id="caloriesBurnt" name="caloriesBurnt" value="<%= run.caloriesBurnt %>"/>
+
+      <!-- Pace -->
+      <!-- <label for="pace">Pace</label>
+      <input type="number" id="pace" name="pace" /> -->
+
+      <!-- Average HR -->
+      <label for="avgHr">Average Heart Rate (bpm)</label>
+      <input type="number" id="avgHr" name="avgHr" value="<%= run.avgHr %>"/>
+
+      <!-- Run Type -->
+      <label for="runType">Run Type</label>
+      <select id="runType" name="runType">
+        <option value="easy" <%= run.runType === 'easy' ? 'selected' : '' %>>easy</option>
+        <option value="long" <%= run.runType === 'long' ? 'selected' : '' %>>long</option>
+        <option value="tempo" <%= run.runType === 'tempo' ? 'selected' : '' %>>tempo</option>
+        <option value="race" <%= run.runType === 'race' ? 'selected' : '' %>>race</option>
+        <option value="interval" <%= run.runType === 'interval' ? 'selected' : '' %>>interval</option>
+      </select>
+
+      <!-- Location -->
+      <label for="location">Location</label>
+      <input type="text" id="location" name="location" value="<%= run.location %>"/>
+      
+      <!-- Notes -->
+      <label for="notes">Notes</label>
+      <textarea name="notes" id="notes"><%= run.notes %></textarea>
+
+      <!-- Add Run Button -->
+      <button type="submit">Update Run</button>
+    </form>
+</body>
+</html>
