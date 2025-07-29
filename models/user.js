@@ -12,7 +12,7 @@ const runSchema = new mongoose.Schema({
     },
     distanceUnit: {
         type: String,
-        enum: ["km", "mi"],
+        enum: ["mi", "km"],
         required: true,
     },
     time: {
@@ -21,7 +21,7 @@ const runSchema = new mongoose.Schema({
     },
     // pace will be calculated on show page
     caloriesBurnt: Number,
-    averageHr: Number,
+    avgHr: Number,
     runType: {
         type: String,
         enum: ['easy', 'long', 'tempo', 'race', 'interval'],

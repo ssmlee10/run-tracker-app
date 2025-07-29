@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log a New Run</title>
+  </head>
+  <body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>Add a new run here!</h1>
+    <form action="/users/<%= user._id %>/runs" method="POST">
+      <!-- Date -->
+      <label for="date">Date</label>
+      <input type="date" id="date" name="date" />
+
+      <!-- Distance -->
+      <label for="distance">Distance</label>
+      <input type="text" name="distance" id="distance" />
+
+      <!-- Distance Unit -->
+      <label for="distanceUnit"></label>
+      <select id="distanceUnit" name="distanceUnit">
+        <option value="mi">mi</option>
+        <option value="km">km</option>
+      </select>
+
+      <!-- Time -->
+      <label for="time">Time</label>
+      <input type="text" id="time" name="time" />
+
+      <!-- Calories Burnt -->
+      <label for="caloriesBurnt">Calories Burned</label>
+      <input type="number" id="caloriesBurnt" name="caloriesBurnt" />
+
+      <!-- Pace -->
+      <!-- <label for="pace">Pace</label>
+      <input type="number" id="pace" name="pace" /> -->
+
+      <!-- Average HR -->
+      <label for="avgHr">Average Heart Rate (bpm)</label>
+      <input type="number" id="avgHr" name="avgHr" />
+
+      <!-- Run Type -->
+      <label for="runType">Run Type</label>
+      <select id="runType" name="runType">
+        <option value="easy">easy</option>
+        <option value="long">long</option>
+        <option value="tempo">tempo</option>
+        <option value="race">race</option>
+        <option value="interval">interval</option>
+      </select>
+
+      <!-- Notes -->
+      <label for="notes">Notes:</label>
+      <textarea name="notes" id="notes"></textarea>
+
+      <!-- Add Run Button -->
+      <button type="submit">Log New Run</button>
+    </form>
+  </body>
+</html>
