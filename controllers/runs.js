@@ -61,7 +61,7 @@ router.delete('/:runId', async (req, res) => {
     }
 })
 
-// edit a run
+// get page to edit a run
 router.get('/:runId/edit', async (req, res) => {
     try {
         const currentUser = await User.findById(req.session.user._id);
@@ -74,6 +74,20 @@ router.get('/:runId/edit', async (req, res) => {
         res.redirect('/');
     }
 })
+
+// put a new edit in db
+router.put('/:runId', async (req, res) => {
+    try {
+        const currentUser = await User.findById(req.session.user._id);
+        const run = currentUser.runs.id(req.params.runId);
+        run.set(req.body);
+        await currentUser.save();
+        res.redirect(`/users/${currentUser._id}/runs/${req.params.runId}`);
+    } catch(error) {
+        console.log(error);
+        res.redirect('/');
+    }
+});
 
 
 module.exports = router;
