@@ -27,6 +27,7 @@ const runSchema = new mongoose.Schema({
         enum: ['easy', 'long', 'tempo', 'race', 'interval'],
         required: true,
     },
+    location: String,
     notes: String,
 });
 
