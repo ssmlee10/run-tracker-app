@@ -48,5 +48,18 @@ router.get('/:runId', async (req, res) => {
     }
 });
 
+// delete a run
+router.delete('/:runId', async (req, res) => {
+    try {
+        const currentUser = await User.findById(req.session.user._id);
+        currentUser.runs.id(req.params.runId).deleteOne();
+        await currentUser.save();
+        res.redirect(`/users/${currentUser._id}/runs`);
+    } catch(error) {
+        console.log(error);
+        res.redirect('/');
+    }
+})
+
 
 module.exports = router;
