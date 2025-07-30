@@ -1,8 +1,58 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+nav {
+  background-color: #004c00;
+  color: white;
+  padding: 15px;
+  display: flex;
+  a {
+    color: white;
+    text-decoration: none;
+    padding: 0 10px;
+  }
+}
+
+.navSignOut {
+  margin-left: auto;
+}
 
 h1 {
   font-family: "Outfit", sans-serif;
   font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  color: #004c00;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
+  font-size: 0.9em;
+  margin: 0 auto;
+  text-align: center;
 }
+
+ul, li {
+  list-style-type: none;
+  margin: 1em 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px 30px;
+  border-radius: 20px;
+  margin: 0 auto;
+}
+
+ label, input {
+   margin: 12px 2px 0 2px;
+ }
+
+ .distanceRow {
+  gap: 1rem;
+ }

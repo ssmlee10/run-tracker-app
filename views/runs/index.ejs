@@ -8,17 +8,16 @@
   </head>
   <body>
     <%- include('../partials/_navbar.ejs') %>
-    <h1>Welcome to my Runs collection</h1>
+    <h1>Run History</h1>
     <a href="runs/new">Add a New Run</a>
     <ul>
       <% runs.forEach((run) => { %>
       <a href="/users/<%= user._id %>/runs/<%= run._id %>"
-        ><li><%= run.location %></li>
+        >
         <li>
           <%= new Date(run.date).toLocaleDateString({ year: 'numeric', month:
-          'short', day: 'numeric' }); %>
-        </li>
-        <li><%= run.distance %><%= run.distanceUnit %>, <%= run.time %></li>
+          'short', day: 'numeric' }); %> <%= run.distance %><%= run.distanceUnit %>, <%= run.time %></li>
+          <li><%= run.location %></li>
         <br />
         <% }); %></a
       >
