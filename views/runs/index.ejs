@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>My Runs</title>
   </head>
   <body>
@@ -11,11 +12,16 @@
     <a href="runs/new">Add a New Run</a>
     <ul>
       <% runs.forEach((run) => { %>
-        <a href="/users/<%= user._id %>/runs/<%= run._id %>"><li><%= run.location %></li>
-      <li><%= new Date(run.date).toLocaleDateString({ year: 'numeric', month:
-        'short', day: 'numeric' }); %></li>
-      <li><%= run.distance %><%= run.distanceUnit %>, <%= run.time %></li><br>
-      <% }); %></a>
+      <a href="/users/<%= user._id %>/runs/<%= run._id %>"
+        ><li><%= run.location %></li>
+        <li>
+          <%= new Date(run.date).toLocaleDateString({ year: 'numeric', month:
+          'short', day: 'numeric' }); %>
+        </li>
+        <li><%= run.distance %><%= run.distanceUnit %>, <%= run.time %></li>
+        <br />
+        <% }); %></a
+      >
     </ul>
   </body>
 </html>
