@@ -4,26 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      <%= new Date(run.date).toLocaleDateString({ year: 'numeric', month:'short', day: 'numeric' }); %> Run
+      <%= new Date(run.date).toLocaleDateString({ year: 'numeric',
+      month:'short', day: 'numeric' }); %> Run
     </title>
   </head>
   <body>
+    <%- include('../partials/_navbar.ejs') %>
     <h1>Your Run</h1>
-    <li>Date: <%= new Date(run.date).toLocaleDateString({ year: 'numeric', month:'short', day: 'numeric' }); %></li>
+    <li>
+      Date: <%= new Date(run.date).toLocaleDateString({ year: 'numeric',
+      month:'short', day: 'numeric' }); %>
+    </li>
     <li>Distance: <%= run.distance %> <%= run.distanceUnit %></li>
     <li>Time: <%= run.time %></li>
+    <li>Pace: <%= pace %>/ <%=run.distanceUnit %></li>
     <li>Calories Burned: <%= run.caloriesBurnt %> cals</li>
     <li>Average Heart Rate: <%= run.avgHr %> bpm</li>
-    <li>Run Type: <%= run.runType %> run</li>
+    <li>Run Type: <%= run.runType %></li>
     <li>Location: <%= run.location %></li>
     <% if (run.notes) { %>
-        <p>Notes: <%= run.notes %></p>
+    <p>Notes: <%= run.notes %></p>
     <% } %>
 
-    <a href="/users/<%=user._id%>/runs/<%=run._id%>/edit">Edit this Run</a>
+    <p><a href="/users/<%=user._id%>/runs/<%=run._id%>/edit">Edit this Run</a></p>
 
-    <form action="/users/<%=user._id%>/runs/<%=run._id%>?_method=DELETE" method="POST">
-        <button type="submit">Delete this run</button>
+    <form
+      action="/users/<%=user._id%>/runs/<%=run._id%>?_method=DELETE"
+      method="POST"
+    >
+      <button type="submit">Delete this run</button>
     </form>
   </body>
 </html>
