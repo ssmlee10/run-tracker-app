@@ -1,10 +1,10 @@
 <nav>
-    <div><a href="/">Home</a></div>
+    <div class="navA"><a href="/">Home</a></div>
     <% if(user) { %>
-        <div><a href="/users/<%=user._id%>/runs">View My Runs</a></div>
-        <div class="navSignOut"><a href="/auth/sign-out">Sign Out</a></div>
+        <div class="navA"><a href="/users/<%=user._id%>/runs">View My Runs</a></div>
+        <div class="navSignOut navA"><a href="/auth/sign-out">Sign Out</a></div>
     <% } else { %>
-        <div><a href="/auth/sign-in">Sign In</a></div>
-        <div><a href="/auth/sign-in">Sign Out</a></div>
+        <div class="navA"><a href="/auth/sign-in">Sign In</a></div>
+        <div class="navA"><a href="/auth/sign-in">Sign Out</a></div>
     <% } %>
 </nav>

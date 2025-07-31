@@ -9,7 +9,6 @@
   <body>
     <%- include('../partials/_navbar.ejs') %>
     <h1>Run History</h1>
-    <a href="runs/new">Add a New Run</a>
     <div>
       <% runs.forEach((run) => { %>
         <div>
@@ -22,8 +21,8 @@
         <div><%= run.location %></div>
         </div>
         <br />
-        <% }); %></a
-      >
+        <% }); %></a>
+        <a href="runs/new">Add a New Run</a>
     </div>
   </body>
 </html>

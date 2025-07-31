@@ -2,14 +2,18 @@
 
 nav {
   background-color: #ff6e00;
-  color: white;
   padding: 15px;
   display: flex;
-  a {
-    color: white;
-    text-decoration: none;
-    padding: 0 10px;
-  }
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0 10px;
+}
+
+nav a:visited {
+  color: #fff;
 }
 
 .navSignOut {
@@ -32,9 +36,22 @@ body {
   font-size: 0.9em;
   margin: 0 auto;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  max-width: 100vw;
+}
+a {
+  text-decoration: none;
+}
+a:visited {
+  color: #000;
+}
+a:hover {
+  font-weight: bold;
 }
 
-ul, li {
+ul,
+li {
   list-style-type: none;
   margin: 1em 0;
 }
@@ -50,39 +67,40 @@ form {
 }
 
 /* form styling */
- label, input {
-   margin: 12px 2px 0 2px;
- }
+label,
+input {
+  margin: 12px 2px 0 2px;
+}
 
- /* puts distance input, distanceUnit on same line */
- .distanceRow {
+/* puts distance input, distanceUnit on same line */
+.distanceRow {
   gap: 1rem;
- }
+}
 
- button {
+button {
   background-color: #ff6e00;
   color: white;
   border: none;
-  padding: .6rem;
+  padding: 0.6rem;
   font-family: "Outfit", sans-serif;
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
-  margin: 0 auto;
- }
+  margin: 2rem auto;
+}
 
- /* grid container on show page */
- .gridContainer {
+/* grid container on show page */
+.gridContainer {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   width: 400px;
   margin: 0 auto;
- }
- 
- .gridItem {
-  padding: 1rem;
- }
+}
 
- .runDetailTitles {
+.gridItem {
+  padding: 1rem;
+}
+
+.runDetailTitles {
   font-weight: bold;
- }
+}
