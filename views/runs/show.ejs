@@ -11,7 +11,10 @@
   </head>
   <body>
     <%- include('../partials/_navbar.ejs') %>
-    <h1><%= new Date(run.date).toLocaleDateString({ year: 'numeric', month:'short', day: 'numeric' }); %> Run</h1>
+    <h1>
+      <%= new Date(run.date).toLocaleDateString({ year: 'numeric',
+      month:'short', day: 'numeric' }); %> Run
+    </h1>
     <div class="gridContainer">
       <div class="gridItem">
         <div class="runDetailTitles">Date:</div>
@@ -48,18 +51,17 @@
       </div>
     </div>
     <% if (run.notes) { %>
-    <p>Notes: <%= run.notes %></p>
+    <p><b>Notes:</b> <%= run.notes %></p>
     <% } %>
-
-    <p>
-      <a href="/users/<%=user._id%>/runs/<%=run._id%>/edit">Edit this Run</a>
-    </p>
+<div class="buttonLinkLine">
+      <a href="/users/<%=user._id%>/runs/<%=run._id%>/edit" class="linkButton"
+        >Edit this Run</a>
 
     <form
       action="/users/<%=user._id%>/runs/<%=run._id%>?_method=DELETE"
-      method="POST"
-    >
-      <button type="submit">Delete this run</button>
+      method="POST">
+      <button type="submit">Delete this Run</button>
     </form>
+    </div>
   </body>
 </html>

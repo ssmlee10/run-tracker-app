@@ -10,8 +10,11 @@
     <% if (user) { %> 
     <%- include('partials/_navbar.ejs') %>
     <h1>Welcome to Rava, <%= user.username %>!</h1>
+    <h2>Chase goals, not just miles.</h2>
+    <img src="/images/runningGroup.jpg" alt="group running a race">
+    <a href="auth/sign-up">Join Us Now</a>
     <% } else { %>
-    <h1>Welcome to the app, run enthusiast!</h1>
+    <h1>Welcome to the Rava, run enthusiast!</h1>
     <a href="/auth/sign-up">Sign up</a>
     <a href="/auth/sign-in">Sign in</a>
     <% } %>
