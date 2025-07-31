@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 
 nav {
-  background-color: #004c00;
+  background-color: #ff6e00;
   color: white;
   padding: 15px;
   display: flex;
@@ -21,7 +21,7 @@ h1 {
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
-  color: #004c00;
+  color: #ff6e00;
 }
 
 body {
@@ -49,10 +49,40 @@ form {
   margin: 0 auto;
 }
 
+/* form styling */
  label, input {
    margin: 12px 2px 0 2px;
  }
 
+ /* puts distance input, distanceUnit on same line */
  .distanceRow {
   gap: 1rem;
+ }
+
+ button {
+  background-color: #ff6e00;
+  color: white;
+  border: none;
+  padding: .6rem;
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  margin: 0 auto;
+ }
+
+ /* grid container on show page */
+ .gridContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 400px;
+  margin: 0 auto;
+ }
+ 
+ .gridItem {
+  padding: 1rem;
+ }
+
+ .runDetailTitles {
+  font-weight: bold;
  }

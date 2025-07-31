@@ -40,20 +40,19 @@ router.get("/:runId", async (req, res) => {
     const currentUser = await User.findById(req.session.user._id);
     const run = currentUser.runs.id(req.params.runId);
     // calculate pace
-    // take out the :
+    // take out the : in the string
     const timeSplit = run.time.split(":");
-    // parse hours, min, sec
+    // parse into hours, min, sec
     const hours = parseInt(timeSplit[0]);
     const min = parseInt(timeSplit[1]);
     const sec = parseInt(timeSplit[2]);
-    // total time in min
+    // calculate total time in min
     const totalTime = hours * 60 + min + sec / 60;
     // calculate pace
     const calculatedPace = totalTime / run.distance;
     // convert pace into minutes, seconds
     const paceMin = Math.floor(calculatedPace);
     const paceSec = Math.round((calculatedPace - paceMin) * 60);
-    // final pace 11:15
     // toString() makes the number a string
     // padStart makes seconds 2 characters, if it's 1 character, adds a zero to the front
     const pace = `${paceMin}:${paceSec.toString().padStart(2, "0")}`;

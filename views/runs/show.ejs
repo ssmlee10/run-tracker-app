@@ -11,18 +11,42 @@
   </head>
   <body>
     <%- include('../partials/_navbar.ejs') %>
-    <h1>Your Run</h1>
-    <li>
-      Date: <%= new Date(run.date).toLocaleDateString({ year: 'numeric',
-      month:'short', day: 'numeric' }); %>
-    </li>
-    <li>Distance: <%= run.distance %> <%= run.distanceUnit %></li>
-    <li>Time: <%= run.time %></li>
-    <li>Pace: <%= pace %>/ <%=run.distanceUnit %></li>
-    <li>Calories Burned: <%= run.caloriesBurnt %> cals</li>
-    <li>Average Heart Rate: <%= run.avgHr %> bpm</li>
-    <li>Run Type: <%= run.runType %></li>
-    <li>Location: <%= run.location %></li>
+    <h1><%= new Date(run.date).toLocaleDateString({ year: 'numeric', month:'short', day: 'numeric' }); %> Run</h1>
+    <div class="gridContainer">
+      <div class="gridItem">
+        <div class="runDetailTitles">Date:</div>
+        <%= new Date(run.date).toLocaleDateString({ year: 'numeric',
+        month:'short', day: 'numeric' }); %>
+      </div>
+      <div class="gridItem">
+        <div class="runDetailTitles">Distance:</div>
+        <%= run.distance %> <%= run.distanceUnit %>
+      </div>
+      <div class="gridItem">
+        <div class="runDetailTitles">Time:</div>
+        <%= run.time %>
+      </div>
+      <div class="gridItem">
+        <div class="runDetailTitles">Pace:</div>
+        <%= pace %>/ <%=run.distanceUnit %>
+      </div>
+      <div class="gridItem">
+        <div class="runDetailTitles">Calories Burned:</div>
+        <%= run.caloriesBurnt %> cals
+      </div>
+      <div class="gridItem">
+        <div class="runDetailTitles">Average Heart Rate:</div>
+        <%= run.avgHr %> bpm
+      </div>
+      <div class="gridItem">
+        <div class="runDetailTitles">Run Type:</div>
+        <%= run.runType %>
+      </div>
+      <div class="gridItem">
+        <div class="runDetailTitles">Location:</div>
+        <%= run.location %>
+      </div>
+    </div>
     <% if (run.notes) { %>
     <p>Notes: <%= run.notes %></p>
     <% } %>

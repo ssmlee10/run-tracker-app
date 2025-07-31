@@ -8,7 +8,7 @@
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
-    <h1>Edit the run here</h1>
+    <h1>Edit this run</h1>
      <form action="/users/<%= user._id %>/runs/<%= run._id %>?_method=PUT" method="POST">
       <!-- Date -->
       <label for="date">Date</label>
