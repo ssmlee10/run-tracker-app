@@ -2,6 +2,7 @@
     <div class="navA"><a href="/">Home</a></div>
     <% if(user) { %>
         <div class="navA"><a href="/users/<%=user._id%>/runs">View My Runs</a></div>
+        <div class="navA"><a href="/users/index.ejs">Explore Our Community</a></div>
         <div class="navSignOut navA"><a href="/auth/sign-out">Sign Out</a></div>
     <% } else { %>
         <div class="navA"><a href="/auth/sign-in">Sign In</a></div>

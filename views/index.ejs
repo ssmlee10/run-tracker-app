@@ -12,11 +12,12 @@
     <h1>Welcome to Rava, <%= user.username %>!</h1>
     <h2>Chase goals, not just miles.</h2>
     <img src="/images/runningGroup.jpg" alt="group running a race">
-    <a href="auth/sign-up">Join Us Now</a>
     <% } else { %>
-    <h1>Welcome to the Rava, run enthusiast!</h1>
-    <a href="/auth/sign-up">Sign up</a>
-    <a href="/auth/sign-in">Sign in</a>
+    <h1>Welcome to Rava</h1>
+    <h2>Chase goals, not just miles.</h2>
+    <p>Already a member? <a href="/auth/sign-in" class="login">Log in</a></p>
+    <img src="/images/running.jpg" alt="man running">
+    <a href="auth/sign-up">Join Us Now</a>
     <% } %>
   </body>
 </html>

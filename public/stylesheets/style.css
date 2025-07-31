@@ -129,3 +129,13 @@ button {
 .buttonLinkLine form, .buttonLinkLine a {
   margin: 0 .35rem;
 }
+
+.login {
+  color: #ff6e00;
+  font-weight: bold;
+}
+
+.login:visited {
+  color: #ff6e00;
+  
+}
