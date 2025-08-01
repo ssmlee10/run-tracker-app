@@ -34,7 +34,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-// get a new run's show page
+// get a run's show page
 router.get("/:runId", async (req, res) => {
   try {
     const currentUser = await User.findById(req.session.user._id);
