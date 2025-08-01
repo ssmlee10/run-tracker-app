@@ -9,18 +9,20 @@
   <body>
     <%- include('../partials/_navbar.ejs') %>
     <h1>Browse Our Community's Runs</h1>
-
-    <% users.forEach((communityUser, idx) => {%>
-
-    <!-- username -->
-    <div><a href="/users/<%= communityUser._id %>"><%= communityUser.username %></a></div>
-
-    <div>
-      <p>Runs: <%= communityUser.runs.length %></p>
-      <p>Total Distance: <%= userTotalDistances[idx] %> mi</p>
-      <!-- pace -->
-      <a href="/users/<%= communityUser._id %>">View Profile</a>
+    <div class="gridContainer">
+      <% users.forEach((communityUser, idx) => {%>
+      <div class="gridItem">
+        <!-- username -->
+        <b><a href="/users/<%= communityUser._id %>"
+          ><%= communityUser.username %></a></b>
+        <p>
+          Total Runs: <%= communityUser.runs.length %><br />
+          Total Distance: <%= userTotalDistances[idx] %> mi
+        </p>
+        <!-- pace -->
+        <b><a href="/users/<%= communityUser._id %>">View Profile</a></b>
+      </div>
+      <% }); %>
     </div>
-    <% }); %>
   </body>
 </html>

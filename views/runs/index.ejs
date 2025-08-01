@@ -6,23 +6,33 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>My Runs</title>
   </head>
+
   <body>
     <%- include('../partials/_navbar.ejs') %>
     <h1>My Runs</h1>
-    <div>
-      <% runs.forEach((run) => { %>
-        <div id="runIndex">
-      <a href="/users/<%= user._id %>/runs/<%= run._id %>">
-        <div>
-          <%= new Date(run.date).toLocaleDateString({ year: 'numeric', month:
-          'short', day: 'numeric' }); %> <%= run.distance %><%= run.distanceUnit
-          %>, <%= run.time %>
+    <div class="gridContainer">
+      <% runs.forEach((run)=> { %>
+      <div id="runIndex" class="gridItem">
+        <a href="/users/<%= user._id %>/runs/<%= run._id %>">
+          <%= new Date(run.date).toLocaleDateString({ year: 'numeric' , month:
+          'short' , day: 'numeric' }); %> <%= run.distance %> <%=
+          run.distanceUnit%>, <%= run.time %>
+        </a>
+        <div><b> <%= run.location %> </b></div>
+        <div class="buttonLinkLine"><p>
+          <a href="/users/<%=user._id%>/runs/<%=run._id%>/edit">Edit</a> |
+          <form
+            action="/users/<%=user._id%>/runs/<%=run._id%>?_method=DELETE"
+            method="POST"
+            class="noStyle">
+            <button type="submit" class="noStyle">Delete</button>
+          </form>
+          </p>
         </div>
-        <div><b><%= run.location %></b></div>
-        </div>
-        <br />
-        <% }); %></a>
+      </div>
+      <% }); %>
     </div>
+
     <a href="runs/new" class="linkButton">Add a New Run</a>
   </body>
 </html>

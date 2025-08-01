@@ -139,3 +139,13 @@ button {
   color: #ff6e00;
   
 }
+
+.noStyle {
+  background-color: #fff;
+  color: #000;
+  padding: 0;
+  font-family: "Raleway", sans-serif;
+  font-size: 1em;
+  margin: 0;
+  cursor: pointer;
+}
