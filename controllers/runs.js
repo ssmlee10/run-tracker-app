@@ -59,7 +59,7 @@ router.get("/:runId", async (req, res) => {
     const pace = `${paceMin}:${paceSec.toString().padStart(2, "0")}`;
     res.render("runs/show.ejs", {
       run: run,
-      pace,
+      pace: pace,
     });
   } catch (error) {
     console.log(error);
