@@ -4,11 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/stylesheets/style.css" />
-    <title>Document</title>
+    <title><%= user.username %>'s Runs</title>
   </head>
   <body>
     <%- include('../partials/_navbar.ejs') %>
     <h1><%= user.username %>'s Runs</h1>
+    <% if (user.runs.length > 0) { %>
 <div class="userShowGrid">
   <!-- Header row -->
   <div></div>
@@ -26,6 +27,9 @@
     <div class="gridItem"><%= user.runs[i].notes %></div>
   <% } %>
 </div>
-        
+  <% } else { %>
+  <p><em><%= user.username %> has not yet logged a run.</em></p>
+<% } %>      
+ <a href="/users" class="linkButton">Back to Community</a>
   </body>
 </html>

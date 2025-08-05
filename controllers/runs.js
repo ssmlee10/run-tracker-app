@@ -7,8 +7,9 @@ const User = require("../models/user.js");
 router.get("/", async (req, res) => {
   try {
     const currentUser = await User.findById(req.session.user._id);
+    const sortedRuns = currentUser.runs.sort((a, b) => new Date(b.date) - new Date(a.date));
     res.render("runs/index.ejs", {
-      runs: currentUser.runs,
+      currentUser, runs: sortedRuns,
     });
   } catch (error) {
     console.log(error);
