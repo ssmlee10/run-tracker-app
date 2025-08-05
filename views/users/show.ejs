@@ -1,13 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <link rel="stylesheet" href="/stylesheets/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>Document</title>
-</head>
-<body>
-        <%- include('../partials/_navbar.ejs') %>
+  </head>
+  <body>
+    <%- include('../partials/_navbar.ejs') %>
     <h1><%= user.username %>'s Runs</h1>
-</body>
+<div class="userShowGrid">
+  <!-- Header row -->
+  <div></div>
+  <div><b>Date</b></div>
+  <div><b>Time</b></div>
+  <div><b>Distance</b></div>
+  <div><b>Notes</b></div>
+
+  <!-- Runs -->
+  <% for (let i = 0; i < user.runs.length; i++) { %>
+    <div class="gridItem"><%= i + 1 %></div>
+    <div class="gridItem"><%= new Date(user.runs[i].date).toLocaleDateString({ year: 'numeric', month: 'short', day: 'numeric' }) %></div>
+    <div class="gridItem"><%= user.runs[i].time %></div>
+    <div class="gridItem"><%= user.runs[i].distance %> mi</div>
+    <div class="gridItem"><%= user.runs[i].notes %></div>
+  <% } %>
+</div>
+        
+  </body>
 </html>

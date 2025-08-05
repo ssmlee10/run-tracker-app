@@ -149,3 +149,10 @@ button {
   margin: 0;
   cursor: pointer;
 }
+
+.userShowGrid {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr 2fr 4fr;
+  width: 600px;
+  margin: 0 auto;
+}
